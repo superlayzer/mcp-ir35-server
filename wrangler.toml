@@ -1,0 +1,7 @@
+name = "mcp-ir35-server"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Optional: require API key auth by setting a secret:
+# npx wrangler secret put MCP_API_KEY
