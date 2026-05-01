@@ -1,17 +1,7 @@
 {
   "name": "mcp-ir35-server",
   "version": "1.0.0",
-  "description": "MCP server for UK IR35 contract analysis: case-law lookup, contract risk dashboard, CEST-style assessment, and Status Determination Statement builder",
-  "author": "Superlayzer",
-  "license": "MIT",
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/superlayzer/mcp-ir35-server.git"
-  },
-  "keywords": ["mcp", "model-context-protocol", "ir35", "off-payroll", "uk-tax", "contract-analysis", "contractor", "cloudflare-workers", "ext-apps"],
-  "packageManager": "pnpm@10.19.0",
-  "engines": { "node": ">=20.0.0" },
   "scripts": {
     "dev": "tsx watch src/node.ts",
     "start": "tsx src/node.ts",
@@ -34,5 +24,27 @@
     "typescript": "^5.8.2",
     "vitest": "^3.0.0",
     "wrangler": "^4.0.0"
+  },
+  "description": "MCP server for UK IR35 contract analysis: case-law lookup, contract risk dashboard, CEST-style assessment, and Status Determination Statement builder",
+  "author": "Superlayzer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/superlayzer/mcp-ir35-server.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ir35",
+    "off-payroll",
+    "uk-tax",
+    "contract-analysis",
+    "contractor",
+    "cloudflare-workers",
+    "ext-apps"
+  ],
+  "packageManager": "pnpm@10.19.0",
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
