@@ -316,7 +316,7 @@ ${SHARED_WIDGET_CSS}
     if (btn) { btn.disabled = true; btn.textContent = "Generating…"; }
     var args = Object.assign({}, state.form);
     if (!args.issuedDate) args.issuedDate = todayUTC();
-    call("ui/request-tool-call", { toolName: "generate_sds", arguments: args })
+    call("tools/call", { name: "generate_sds", arguments: args })
       .then(function (result) {
         var text = extractTextFromResult(result);
         if (!text) {
@@ -560,8 +560,8 @@ ${SHARED_WIDGET_CSS}
 
   call("ui/initialize", {
     protocolVersion: "2026-01-26",
-    capabilities: {},
-    clientInfo: { name: "ir35-generate-sds-widget", version: "1.0.0" }
+    appCapabilities: {},
+    appInfo: { name: "ir35-generate-sds-widget", version: "1.0.0" }
   }).then(function (result) {
     if (result && result.hostContext && result.hostContext.theme) applyTheme(result.hostContext.theme);
     return call("ui/state/get", {}).catch(function () { return null; });

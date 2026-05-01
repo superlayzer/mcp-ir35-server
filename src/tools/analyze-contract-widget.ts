@@ -420,8 +420,8 @@ ${SHARED_WIDGET_CSS}
   function requestRewrite(btn, patternId) {
     btn.disabled = true;
     btn.textContent = "Loading…";
-    call("ui/request-tool-call", {
-      toolName: "suggest_clause_rewrite",
+    call("tools/call", {
+      name: "suggest_clause_rewrite",
       arguments: { patternId: patternId }
     }).then(function (result) {
       try {
@@ -529,8 +529,8 @@ ${SHARED_WIDGET_CSS}
 
   call("ui/initialize", {
     protocolVersion: "2026-01-26",
-    capabilities: {},
-    clientInfo: { name: "ir35-analyze-contract-widget", version: "1.0.0" }
+    appCapabilities: {},
+    appInfo: { name: "ir35-analyze-contract-widget", version: "1.0.0" }
   }).then(function (result) {
     if (result && result.hostContext && result.hostContext.theme) applyTheme(result.hostContext.theme);
   }).catch(function () { /* init timeout — host not responsive; widget is read-only until tool-result arrives */ });
