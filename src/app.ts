@@ -76,6 +76,9 @@ app.all("/mcp", async (c) => {
   const server = createMcpServer();
   const transport = new StreamableHTTPServerTransport({
     sessionIdGenerator: undefined,
+    // SSE streams don't serialize cleanly through fetch-to-node on
+    // Cloudflare Workers — force plain JSON responses instead.
+    enableJsonResponse: true,
   });
   res.on("close", () => {
     transport.close();
