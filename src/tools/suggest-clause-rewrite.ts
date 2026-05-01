@@ -58,7 +58,7 @@ export function registerSuggestClauseRewrite(server: McpServer): void {
     {
       title: "Suggest an IR35-friendly clause rewrite",
       description:
-        "Given a problematic clause (by patternId from analyze_contract, or by factor), returns an IR35-safer rewrite with case-law reasoning. Designed to be called from the analyze_contract widget's 'request rewrite' button via ui/request-tool-call, but also callable directly.",
+        "Given a problematic clause (by patternId from analyze_contract, or by factor), returns an IR35-safer rewrite with case-law reasoning. Designed to be called from the analyze_contract widget's 'request rewrite' button via standard MCP tools/call, but also callable directly.",
       inputSchema: {
         patternId: z
           .string()

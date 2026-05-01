@@ -336,8 +336,8 @@ ${SHARED_WIDGET_CSS}
   function submitForScoring() {
     var btn = document.querySelector('[data-action="submit"]');
     if (btn) { btn.disabled = true; btn.textContent = "Scoring…"; }
-    call("ui/request-tool-call", {
-      toolName: "cest_check",
+    call("tools/call", {
+      name: "cest_check",
       arguments: { responses: state.responses }
     }).then(function (result) {
       var text = extractTextFromResult(result);
@@ -558,8 +558,8 @@ ${SHARED_WIDGET_CSS}
 
   call("ui/initialize", {
     protocolVersion: "2026-01-26",
-    capabilities: {},
-    clientInfo: { name: "ir35-cest-check-widget", version: "1.0.0" }
+    appCapabilities: {},
+    appInfo: { name: "ir35-cest-check-widget", version: "1.0.0" }
   }).then(function (result) {
     if (result && result.hostContext && result.hostContext.theme) applyTheme(result.hostContext.theme);
     return call("ui/state/get", {}).catch(function () { return null; });
