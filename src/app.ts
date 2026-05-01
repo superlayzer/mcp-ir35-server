@@ -67,7 +67,14 @@ app.use("/mcp", async (c, next) => {
   return next();
 });
 
-app.all("/mcp", async (c) => {
+// JSON-mode transport doesn't support GET (SSE notification stream) —
+// answer with 405 so MCP clients fall back to POST-only instead of
+// treating the SDK's stateless-mode 400 as a fatal connection error.
+app.on(["GET", "DELETE"], "/mcp", (c) =>
+  c.text("Method Not Allowed", 405, { Allow: "POST" }),
+);
+
+app.post("/mcp", async (c) => {
   const body = await c.req.raw
     .clone()
     .json()
