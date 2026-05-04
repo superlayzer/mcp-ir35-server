@@ -1,6 +1,6 @@
 # mcp-ir35-server
 
-UK IR35 contract analysis as an [MCP](https://modelcontextprotocol.io) server, with rich UI built on [Layzer](https://layzer.ai)'s apps-sdk protocol.
+UK IR35 contract analysis as an [MCP](https://modelcontextprotocol.io) server, with rich UI built on the [MCP ext-apps protocol](https://github.com/superlayzer/ext-apps).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D20-brightgreen)](https://nodejs.org)
@@ -79,7 +79,7 @@ Your server URL: `https://mcp-ir35-server.<your-subdomain>.workers.dev/mcp`
 - "Run a CEST-style check on my IR35 status"
 - "Generate an SDS for [worker] at [client] for [engagement]"
 
-## The apps-sdk UI protocol
+## The ext-apps UI protocol
 
 Widgets run in sandboxed iframes and communicate via `postMessage` using JSON-RPC 2.0:
 
@@ -87,7 +87,7 @@ Widgets run in sandboxed iframes and communicate via `postMessage` using JSON-RP
 2. Host sends `ui/notifications/tool-result` with tool output
 3. Widget renders, persists state via `ui/state/set`, can call back tools via `ui/request-tool-call`, and reports height via `ui/notifications/size-changed`
 
-See the [Layzer apps-sdk](https://github.com/superlayzer/apps-sdk) for protocol details.
+See [`superlayzer/ext-apps`](https://github.com/superlayzer/ext-apps) for protocol details.
 
 ## Contributing
 

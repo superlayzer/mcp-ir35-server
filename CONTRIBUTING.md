@@ -2,7 +2,7 @@
 
 Thanks for your interest in contributing! This server provides UK IR35
 contract analysis tooling for contractors, with rich UI surfaces built
-on [Layzer](https://layzer.ai)'s apps-sdk protocol.
+on the [MCP ext-apps protocol](https://github.com/superlayzer/ext-apps).
 
 ## Prerequisites
 
